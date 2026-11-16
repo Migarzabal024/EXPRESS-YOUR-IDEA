@@ -1,0 +1,25 @@
+{
+  "name": "@eyi/editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interfaz de Express Your Idea (React). Independiente de la plataforma: habla solo con EyiApi.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles/app.css"
+  },
+  "dependencies": {
+    "@eyi/core": "*",
+    "@fontsource-variable/bricolage-grotesque": "5.3.0",
+    "lucide-react": "1.73.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zustand": "5.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
+  }
+}

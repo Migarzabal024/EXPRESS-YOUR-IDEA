@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1794852982274,
+      "tag": "0000_messy_kang",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1794854546698,
+      "tag": "0001_search_index",
+      "breakpoints": true
+    }
+  ]
+}

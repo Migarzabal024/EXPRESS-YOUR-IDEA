@@ -1,0 +1,47 @@
+appId: com.expressyouridea.app
+productName: Express Your Idea
+copyright: Copyright © 2026 Express Your Idea
+directories:
+  output: release/${version}
+  buildResources: build
+files:
+  - out/**
+  - package.json
+  - '!**/*.{map,ts,tsx}'
+asarUnpack:
+  # El motor de SQLite (un .node) no puede cargarse desde dentro del .asar
+  - '**/node_modules/better-sqlite3/**'
+npmRebuild: false
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: build/icon.ico
+  # Sin certificado de firma por ahora (ver README: SmartScreen). El ícono y los
+  # datos del programa sí se incrustan en el .exe.
+
+nsis:
+  # Instalador con pasos (no "un clic"), en español.
+  oneClick: false
+  # Se instala para el usuario actual: no pide permisos de administrador.
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  installerLanguages: [es_ES]
+  language: '3082'
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  installerHeaderIcon: build/icon.ico
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: Express Your Idea
+  uninstallDisplayName: Express Your Idea
+  runAfterFinish: true
+  # Al desinstalar NO se borran las preferencias ni, por supuesto, los proyectos
+  # (los proyectos viven en Documentos, fuera de la carpeta de la app).
+  deleteAppDataOnUninstall: false
+  artifactName: ExpressYourIdea-Setup-${version}.${ext}
+
+# Sin servidor de actualizaciones automáticas por ahora.
+publish: null
